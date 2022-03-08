@@ -1,0 +1,29 @@
+server:
+  servlet:
+    context-path: /roerdev-api
+  port : 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/prueba?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: r00t
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    #properties:
+    #  hibernate:
+    #    dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      # Hibernate ddl auto (create, create-drop, validate, update, none)
+      ddl-auto: update
+    # database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+swagger:
+  enabled: true
